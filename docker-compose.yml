@@ -1,0 +1,18 @@
+
+services:
+  toolchain:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    container_name: toolchain
+    env_file:
+      - .env
+      - env_file
+    volumes:
+      - ./:/home/dev/workspace
+      - ./entrypoint.sh:/home/dev/entrypoint.sh
+    restart: unless-stopped
+    tty: true
+    stdin_open: true
+    privileged: true
+    entrypoint: ["bash", "/home/dev/entrypoint.sh"]
