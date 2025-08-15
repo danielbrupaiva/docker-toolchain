@@ -1,6 +1,6 @@
 
 services:
-  toolchain:
+  dev-tools:
     build:
       context: ./
       dockerfile: Dockerfile
