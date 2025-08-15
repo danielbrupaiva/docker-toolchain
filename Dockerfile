@@ -32,7 +32,7 @@ RUN useradd -m -s /bin/bash dev \
 # RPI4 SYSROOT
 # Switch to the root user
 USER root
-# Set the default working directory
+# Set the default working directory for custom sysroots
 WORKDIR /opt/sysroots 
 COPY /sysroots/rpi4.tar.xz /opt/sysroots/
 # Extract RPI4 sysroot

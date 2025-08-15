@@ -1,7 +1,6 @@
 # Docker toolchain
 This is a docker base repository for toolchain's creation to be use in embedded software developement
 
-## Repository Description
 This repository provides a Docker-based environment for building and managing toolchains tailored for embedded software development. It simplifies the setup process, ensuring consistency and reproducibility across different development systems.
 
 ## Features
@@ -98,10 +97,13 @@ Refer to the **Useful commands** section below for additional operations.
 **Others useful commands**
 
 ```bash
+# clean up enviroment
 docker system prune -a --volumes
+# build
 docker compose up -d --build
 docker compose up -d --build --force-recreate
+# exec
 docker exec -it toolchain bash
-docker build -t toolchain:v0.3 -f D
-ockerfile .
+# build with tac
+docker build -t toolchain:v0.3 -f Dockerfile .
 ```
