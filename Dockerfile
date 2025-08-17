@@ -4,11 +4,9 @@ FROM ubuntu:22.04
 ENV DEBIAN_FRONTEND=noninteractive
 # Set default shell during Docker image build to bash
 SHELL ["/bin/bash", "-c"]
-ENV LC_ALL=C.UTF-8
-ENV LANG=C.UTF-8
 # Update and install toolchain dependencies
 RUN apt update && \
-    apt install -y --no-install-recommends sudo ca-certificates \
+    apt install -y --no-install-recommends sudo ca-certificates tzdata \
     pkg-config build-essential ninja-build cmake make gcc autoconf libtool automake m4 gawk texinfo bison \
     file git wget curl rsync symlinks python3 python-is-python3 xz-utils xutils-dev p7zip-full symlinks \
     openssh-client net-tools iputils-ping nodejs gdb gdb-multiarch openocd

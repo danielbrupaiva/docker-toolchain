@@ -92,18 +92,29 @@ To build the Docker toolchain environment, follow these steps:
     docker push yourusername/toolchain:latest
     ```   
 
-Refer to the **Useful commands** section below for additional operations.
+
+## Build and registry the docker image created
+
+```bash
+#Docker login
+docker login
+#Build image
+docker build -t docker-toolchain:v0.1 -f Dockerfile .
+#Create a tag
+docker tag docker-toolchain:v0.1 bootoolz/docker-toolchain:v0.1
+#Registry the image at remote
+docker push bootoolz/docker-toolchain:v0.1
+```
+## How to use from docker registry
+```bash
+#Pull
+docker pull bootoolz/docker-toolchain:v0.1
+docker run -it bootoolz/docker-toolchain:v0.1
+```
 
 **Others useful commands**
 
 ```bash
 # clean up enviroment
 docker system prune -a --volumes
-# build
-docker compose up -d --build
-docker compose up -d --build --force-recreate
-# exec
-docker exec -it toolchain bash
-# build with tac
-docker build -t toolchain:v0.3 -f Dockerfile .
 ```

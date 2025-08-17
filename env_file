@@ -2,3 +2,11 @@
 # VARIABLE_NAME=value
 # VARIABLE_NAME2=value2
 # ...   
+
+DEBIAN_FRONTEND=noninteractive
+LC_ALL=C.UTF-8
+LANG=C.UTF-8
+LANGUAGE=C.UTF-8
+TZ=America/Sao_Paulo
+
+SYSROOTS_FOLDER="/opt/sysroots"
